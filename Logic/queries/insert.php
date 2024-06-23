@@ -36,7 +36,6 @@
         // Execute the query
         if (mysqli_query($conn, $query)) {
             echo '<script>alert("Your request is on process");</script>';
-    
         } else {
             echo "Error: " . $query . "<br>" . mysqli_error($conn);
         }
@@ -44,8 +43,7 @@
         echo "File upload failed.";
     }
 
-    header("Location: ../../index.php");
-    exit();
-
+    // header("Location: ../../index.php");
+    // exit();
 
 ?>

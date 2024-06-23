@@ -1,5 +1,7 @@
 <?php 
     include "../../../Logic/connection.php";
+    session_start();
+    $user= $_SESSION['USER'];
 
     $get_box_query= "SELECT box.VOTENUMBER, list.COLOR
     FROM user
@@ -12,6 +14,7 @@
     WHERE user.ID =". $user['ID'];
     $get_box = mysqli_query($conn, $get_box_query);
     $box = mysqli_fetch_assoc($get_box);
+   
 
 echo "
 <div style='width: 100%' class='d-flex justify-content-center'>

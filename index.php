@@ -951,7 +951,7 @@
             e.preventDefault(); // Prevent the default form submission
 
             $.ajax({
-                url: './Logic/request.php',
+                url: './Logic/queries/insert.php',
                 type: 'POST',
                 data: new FormData(this), // Use FormData to properly handle file uploads
                 processData: false,

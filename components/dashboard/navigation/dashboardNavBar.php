@@ -9,7 +9,7 @@
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-muted pr-0" href="../../dashboard/profile.php" role="button">
                 <span class="avatar avatar-sm mt-2">
-                    <img src="<?php echo $program['PROFILE'];?>" alt="..." class="avatar-img rounded-circle">
+                    <img src="<?php echo "../". $program['PROFILE'];?>" alt="..." class="avatar-img rounded-circle">
                 </span>
             </a>
         </li>

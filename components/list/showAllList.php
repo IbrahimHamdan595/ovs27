@@ -23,13 +23,15 @@
             </div>";
  
       while($rowlist = mysqli_fetch_assoc($get_list_users)) {
-         echo "
-            <div class='d-flex flex-row p-4 align-items-end'>
-            <img class='' src='".$rowlist['PROFILE']."'/>
-            <div class='d-flex align-items-center px-1 ml-1 flex-grow-1' style='background: white;height: 50px;'>".$rowlist['FIRSTNAME']." ".$rowlist['MIDDLENAME']." ".$rowlist['LASTNAME']."</div>
-           </div>";
+         echo "<div class='d-flex flex-row p-4 align-items-end'>";
+         if(isset($_GET['dash'])){
+            echo "<img class='' src='../".$rowlist['PROFILE']."'/>";
+         }else{
+            echo "<img class='' src='".$rowlist['PROFILE']."'/>";
+         }
+         echo "<div class='d-flex align-items-center px-1 ml-1 flex-grow-1' style='background: white;height: 50px;'>".$rowlist['FIRSTNAME']." ".$rowlist['MIDDLENAME']." ".$rowlist['LASTNAME']."</div>
+         </div>";
       
-     
       }
 
    echo "</div>";
