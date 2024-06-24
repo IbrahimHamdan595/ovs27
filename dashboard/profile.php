@@ -37,6 +37,7 @@
   // Initialize an empty array to store the fetched rows
 $url_rows = array();
 
+$celebration = mysqli_fetch_assoc($get_celebration);
 // Check if there are rows returned by the query
 if ($get_url) {
     // Iterate over the result set and fetch each row as an associative array

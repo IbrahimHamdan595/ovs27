@@ -1,7 +1,7 @@
 <form method="POST" action="../components/list/selectCandidateNewList.php" class="card p-4" style="max-width: 100%;">
     <div class='d-flex flex-row d-flex justify-content-center'>
         <?php
-            while ($bigarea = mysqli_fetch_assoc($bigarea_result)) {
+            while ($bigarea = mysqli_fetch_assoc($get_big_area)) {
                 echo "
                     <option value='".$bigarea['ID']."'>
                         ".$bigarea['NAME']."

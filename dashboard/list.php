@@ -14,6 +14,8 @@
     $get_my_list =  mysqli_query($conn,$my_list_query);
   }
   
+  $celebration = mysqli_fetch_assoc($get_celebration);
+  
   if ($user) {
 ?>
 
@@ -94,6 +96,9 @@
                 <?php
                     mysqli_data_seek($get_list, 0);
                             
+                    $big_area_query = "SELECT * FROM bigarea"; 
+                    $get_big_area =  mysqli_query($conn,$big_area_query);
+
                     while ($blist = mysqli_fetch_assoc($get_big_area)) {                       
                         echo "<h6 class='pt-4'>".$blist['NAME']."</h6>";
                         echo "<div class='d-flex flex-row flex-wrap '>";

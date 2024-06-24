@@ -29,7 +29,7 @@
         while($list_users = mysqli_fetch_assoc($get_list_users)) {
             echo "
             <div class='d-flex flex-row p-4 align-items-end'>
-                <img class='' src='".$list_users['PROFILE']."'/>
+                <img class='' src='../".$list_users['PROFILE']."'/>
                 <div class='d-flex align-items-center px-1 ml-1 flex-grow-1' style='background: white;height: 50px;'>".$list_users['FIRSTNAME']." ".$list_users['MIDDLENAME']." ".$list_users['LASTNAME']."</div>
             </div>";
         }

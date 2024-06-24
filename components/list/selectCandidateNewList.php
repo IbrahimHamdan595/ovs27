@@ -28,19 +28,19 @@ $list_id = mysqli_insert_id($conn);
 
     <title>Check Your Name</title>
     <!-- Simple bar CSS -->
-    <link rel="stylesheet" href="../../light/css/simplebar.css">
+    <link rel="stylesheet" href="../../dashboard/css/simplebar.css">
     <!-- Fonts CSS -->
     <link
         href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <!-- Icons CSS -->
-    <link rel="stylesheet" href="../../light/css/feather.css">
-    <link rel="stylesheet" href="../../light/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="../../dashboard/css/feather.css">
+    <link rel="stylesheet" href="../../dashboard/css/dataTables.bootstrap4.css">
     <!-- Date Range Picker CSS -->
-    <link rel="stylesheet" href="../../light/css/daterangepicker.css">
+    <link rel="stylesheet" href="../../dashboard/css/daterangepicker.css">
     <!-- App CSS -->
-    <link rel="stylesheet" href="../../light/css/app-light.css" id="lightTheme">
-    <link rel="stylesheet" href="../../light/css/app-dark.css" id="darkTheme" disabled>
+    <link rel="stylesheet" href="../../dashboard/css/app-light.css" id="lightTheme">
+    <link rel="stylesheet" href="../../dashboard/css/app-dark.css" id="darkTheme" disabled>
     <!-- <link rel="stylesheet" href="../../assets/css/style.css" /> -->
 
 </head>
@@ -144,17 +144,17 @@ $list_id = mysqli_insert_id($conn);
     </div>
     </main> <!-- main -->
     </div> <!-- .wrapper -->
-    <script src="../../light/js/jquery.min.js"></script>
-    <script src="../../light/js/popper.min.js"></script>
-    <script src="../../light/js/moment.min.js"></script>
-    <script src="../../light/js/bootstrap.min.js"></script>
-    <script src="../../light/js/simplebar.min.js"></script>
-    <script src='../../light/js/daterangepicker.js'></script>
-    <script src='../../light/js/jquery.stickOnScroll.js'></script>
-    <script src="../../light/js/tinycolor-min.js"></script>
-    <script src="../../light/js/config.js"></script>
-    <script src='../../light/js/jquery.dataTables.min.js'></script>
-    <script src='../../light/js/dataTables.bootstrap4.min.js'></script>
+    <script src="../../dashboard/js/jquery.min.js"></script>
+    <script src="../../dashboard/js/popper.min.js"></script>
+    <script src="../../dashboard/js/moment.min.js"></script>
+    <script src="../../dashboard/js/bootstrap.min.js"></script>
+    <script src="../../dashboard/js/simplebar.min.js"></script>
+    <script src='../../dashboard/js/daterangepicker.js'></script>
+    <script src='../../dashboard/js/jquery.stickOnScroll.js'></script>
+    <script src="../../dashboard/js/tinycolor-min.js"></script>
+    <script src="../../dashboard/js/config.js"></script>
+    <script src='../../dashboard/js/jquery.dataTables.min.js'></script>
+    <script src='../../dashboard/js/dataTables.bootstrap4.min.js'></script>
     <script>
     $('#dataTable-1').DataTable({
         autoWidth: true,

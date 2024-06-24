@@ -133,7 +133,7 @@
                     while($list_users = mysqli_fetch_assoc($get_list)) { 
                         $sql = "SELECT * FROM user where LISTID = ". $list_users['ID'];
                         $result = $conn->query($sql);
-                        $get_candidate_list_query = "SELECT smallarea.NAME AS small_area_name, bigarea.NAME AS big_area_name, record.NAME AS record_name
+                        $get_candidate_list_query = "SELECT smallarea.NAME AS small_area_name, bigarea.NAME AS big_area_name, record.NAME AS record_name, register.REGISTERNUM AS register_num
                         FROM user
                         JOIN register ON user.REGISTERID = register.ID
                         JOIN record ON register.RECORDID = record.ID
@@ -204,7 +204,7 @@
                                         <td>". $candidate_list['big_area_name']."</td>
                                         <td>". $candidate_list['small_area_name']."</td>
                                         <td>". $candidate_list['record_name']."</td>
-                                        <td>".$row['REGISTERNUM']."</td>
+                                        <td>".$candidate_list['register_num']."</td>
                                         </tr>
                                         ";
                             }

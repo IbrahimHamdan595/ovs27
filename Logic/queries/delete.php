@@ -13,7 +13,7 @@
         $user['LISTID'] = NULL;
 
         if (empty($user['LISTID'])) {
-            header("Location: ../../dashboard/list.php");
+            header("Location: ../../dashboard/list.php?dash=true");
             exit();
         }
     }
@@ -51,7 +51,7 @@
         $delete_list_query = "DELETE FROM `list` WHERE ID = ". $listID;
         $delete_list =  mysqli_query($conn,$delete_list_query);
 
-        header("Location: ../../dashboard/list.php");
+        header("Location: ../../dashboard/list.php?dash=true");
         exit();
     }
 

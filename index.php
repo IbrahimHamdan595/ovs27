@@ -747,7 +747,7 @@
                 </div>
 
                 <?php
-                    include "../components/analycis/resultOfElection.php";                            
+                    include "./components/showResult.php";                            
                 ?>
 
             </div>

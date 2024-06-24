@@ -125,10 +125,11 @@
                             <!-- Striped rows -->
                             <?php include '../components/dashboard/analycis/getNumberOfVotesPerSmall.php';
                             } ?>
-
-                            <?php  if($celebration['ENDED']){
-                              include "../components/analycis/resultOfElection.php"; 
+                            <div class="md-12" style="width:100%;   ">
+                                <?php  if($celebration['ENDED']){
+                              include "../components/showResult.php"; 
                             }   ?>
+                            </div>
                         </div>
                     </div>
                 </div> <!-- .col-12 -->

@@ -10,6 +10,8 @@
   $get_program = mysqli_query($conn, $get_program_sql);
   $program =  mysqli_fetch_assoc($get_program);
 
+  $celebration = mysqli_fetch_assoc($get_celebration);
+
   if ($user) {
 ?>
 

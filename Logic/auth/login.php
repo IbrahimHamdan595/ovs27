@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         exit();
                     }
                 }else if($row['ROLEID'] != 3) {
-                            header("Location: ../../dashboard/analycis.php");
+                            header("Location: ../../dashboard/analycis.php?res=true");
                             exit();
                     }
                     // Password is correct, redirect user to dashboard or homepage

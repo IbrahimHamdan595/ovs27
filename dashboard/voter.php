@@ -3,6 +3,7 @@
   include "../Logic/Connection.php";
   include "../Logic/queries/select.php";
 
+  $celebration = mysqli_fetch_assoc($get_celebration);
   $user = $_SESSION["USER"];
   
   if ($user) {

@@ -21,7 +21,7 @@
             <div class="row items-align-baseline h-100">
                 <div class="col-md-6 my-3 d-flex flex-row justify-content-around">
                     <p>Let's start with voting</p>
-                    <a class="btn btn-danger" href="../Logic/query/update.php?start=true">Start</a>
+                    <a class="btn btn-danger" href="../Logic/queries/update.php?start=true">Start</a>
                 </div>
             </div> <!-- .card-body -->
         </div> <!-- .card -->
@@ -34,7 +34,7 @@
                 <div class="row items-align-baseline h-100">
                     <div class="col-md-6 my-3 d-flex flex-row justify-content-around">
                         <p>Let's View results</p>
-                        <a class="btn btn-danger" href="../Logic/query/update.php?end=true">Result</a>
+                        <a class="btn btn-danger" href="../Logic/queries/update.php?end=true">Result</a>
                     </div>
                 </div> <!-- .card-body -->
             </div> <!-- .card -->

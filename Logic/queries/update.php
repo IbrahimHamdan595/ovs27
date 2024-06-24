@@ -43,7 +43,7 @@
         $update_accepted_query = "UPDATE `list` SET `ACCEPTED`= 1 WHERE ID = $list_id";
         $update_list =  mysqli_query($conn,$update_accepted_query);
         
-        header("Location: ../../dashboard/list.php");
+        header("Location: ../../dashboard/list.php?dash=true");
         exit();
     }
 
@@ -59,14 +59,13 @@
             }
         }
 
-        header("Location: ../../dashboard/list.php");
+        header("Location: ../../dashboard/list.php?dash=true");
         exit();
     }
     
     if(isset($_GET['start'])) {
         $update_program = "UPDATE celebration SET STARTDATE = '1'";
         $election_program = mysqli_query($conn, $update_program);
-
         header("location: ../../dashboard/analycis.php");
         exit();
     }
@@ -75,7 +74,7 @@
         $update_program = "UPDATE celebration SET ENDED = '1'";
         $election_program = mysqli_query($conn, $update_program);
 
-        header("location: ../../dashboard/analycis.php");
+        header("location: ../../dashboard/analycis.php?res=true");
         exit();
     }
 

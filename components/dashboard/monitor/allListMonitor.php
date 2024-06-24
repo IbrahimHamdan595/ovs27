@@ -52,7 +52,7 @@ echo "
 while($rowlist = mysqli_fetch_assoc($get_list_users)) {
     echo "
     <div class='d-flex flex-row p-4 align-items-end'>
-        <img class='' src='".$rowlist['PROFILE']."'/>
+        <img class='' src='../".$rowlist['PROFILE']."'/>
         <div class='d-flex align-items-center px-1 ml-1 flex-grow-1 bg-light' style='height: 50px;'>".$rowlist['FIRSTNAME']." ".$rowlist['MIDDLENAME']." ".$rowlist['LASTNAME']."</div>
         <div class='d-flex align-items-center px-2 ml-1 bg-light' id='candidatevotes' style='height: 50px;'>".$rowlist['VOTENUMBER']."</div> 
     </div>";
