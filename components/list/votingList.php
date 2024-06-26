@@ -38,7 +38,7 @@
         while($voting_list = mysqli_fetch_assoc($get_voting_list)) {
             echo "
                 <div class='d-flex flex-row justify-content-around p-2 align-items-end'>
-                    <img class='' src='".$voting_list['PROFILE']."'/>
+                    <img class='' src='../".$voting_list['PROFILE']."'/>
                 <div class='d-flex align-items-center px-1 ml-1 flex-grow-1' style='background: white;height: 50px;'>".$voting_list['FIRSTNAME']." ".$voting_list['MIDDLENAME']." ".$voting_list['LASTNAME']."</div>        
                 ";
             if ($voting_list['small_area_name'] == $user['small_area_name']) {

@@ -1,18 +1,21 @@
 <?php
 session_start();
     
-include('../../Logic/connection.php');
-include("../../Logic/queries/select.php");
-
+include('../../Logic/Connection.php');
 $user= $_SESSION['USER'];
 $name = $_POST['name'];
 $color = $_POST['color'];
 $bigarea = $user['BIGAREAID'];
 
 
+
 $insert_list_query = "INSERT INTO `list`(`NAME`, `COLOR`, `BIGAREA`) VALUES ('$name', '$color', '$bigarea')";
 $insert_result = mysqli_query($conn, $insert_list_query);
 $list_id = mysqli_insert_id($conn);
+
+
+$sql = "SELECT user.*, register.REGISTERNUM FROM user JOIN register on user.REGISTERID = register.ID"; // Change 'user' to your actual table name
+$result = $conn->query($sql);
 
 
 ?>
@@ -63,9 +66,9 @@ $list_id = mysqli_insert_id($conn);
                             <div class="col-md-12">
                                 <div class="card shadow">
                                     <div class="card-body">
-                                        <form action="../../Logic/queries/update.php" method="post">
+                                        <form action="../../Logic/queries/update.php?setlist=true" method="post">
                                             <!-- table -->
-                                            <input type="hidden" name="list_ID" value="<?php echo $list_id; ?>">
+                                            <input type="hidden" name="list_id" value="<?php echo $list_id; ?>">
                                             <table class="table datatables" id="dataTable-1">
                                                 <thead>
                                                     <tr>
@@ -87,49 +90,54 @@ $list_id = mysqli_insert_id($conn);
 
                                                     <?php 
 
-                                                        if ($get_all_user->num_rows > 0) {
+                                                        if ($result->num_rows > 0) {
 
-                                                            while($row = mysqli_fetch_assoc($get_all_user)) {
-                                                                $get_user_info_query = "SELECT smallarea.NAME AS small_area_name, bigarea.ID AS big_area_id,bigarea.NAME AS big_area_name, record.NAME AS record_name
-                                                                FROM user
-                                                                JOIN register ON user.REGISTERID = register.ID
-                                                                JOIN record ON register.RECORDID = record.ID
-                                                                JOIN smallarea ON record.SMALLAREAID = smallarea.ID
-                                                                JOIN bigarea ON smallarea.BIGAREAID = bigarea.ID
-                                                                WHERE user.ID =". $row['ID']; 
-                                    
-                                                                $get_user_info = mysqli_query($conn, $get_user_info_query);
-                                                                $user_info = mysqli_fetch_assoc($get_user_info);
-                                    
-                                                                if ($row['ROLEID'] == 1 && $user_info['big_area_id'] == $bigarea && empty($row['LISTID']) ){
+                                                        while($row = $result->fetch_assoc()) {
+                                                            $get_location_query = "SELECT smallarea.NAME AS small_area_name, bigarea.ID AS big_area_id,bigarea.NAME AS big_area_name, record.NAME AS record_name
+                                                            FROM user
+                                                            JOIN register ON user.REGISTERID = register.ID
+                                                            JOIN record ON register.RECORDID = record.ID
+                                                            JOIN smallarea ON record.SMALLAREAID = smallarea.ID
+                                                            JOIN bigarea ON smallarea.BIGAREAID = bigarea.ID
+                                                            WHERE user.ID =". $row['ID']; 
+                                
+                                                            $get_location = mysqli_query($conn, $get_location_query);
+                                                            $location = mysqli_fetch_assoc($get_location);
+                                
+                                                            if ($row['ROLEID'] == 1 && $location['big_area_id'] == $bigarea && empty($row['LISTID']) ){
+                                                                echo "
+                                                                    <tr>
+                                                                
+                                                                    <td>
+                                                                        <input style='z-index: 100' class='custom-checkbox' type='checkbox' name='selected_users[]' value='".$row['ID']."'>
+                                                                    </td>
+                                                                    <td>".$row['ID']."</td>
+                                                                    <td>".$row['FIRSTNAME']. $row['MIDDLENAME']. $row['LASTNAME']."</td>
+                                                                    <td>".$row['MOTHERNAME']."</td>";
+                                                                    if ($row['GENDER'] == 1){
                                                                     echo "
-                                                                        <tr>
-                                                                            <td>
-                                                                                <input style='z-index: 100' class='custom-checkbox' type='checkbox' name='selected_users[]' value='".$row['ID']."'>
-                                                                            </td>
-                                                                            <td>".$row['ID']."</td>
-                                                                            <td>".$row['FIRSTNAME']. $row['MIDDLENAME']. $row['LASTNAME']."</td>
-                                                                            <td>".$row['MOTHERNAME']."</td>";
-                                                                            if ($row['GENDER'] == 1){
-                                                                                echo " <td>Female</td> ";                                                                                
-                                                                            }else {
-                                                                                echo "<td>Male</td>";
-                                                                            }
-                                                                            echo "
-                                                                            <td>".$row['DOB']."</td>
-                                                                            <td>". $user_info['big_area_name']."</td>
-                                                                            <td>". $user_info['small_area_name']."</td>
-                                                                            <td>". $user_info['record_name']."</td>
-                                                                            <td>".$row['REGISTERNUM']."</td>
-                                                                            <td>".$row['CENTERID']."</td>                                                                    
-                                                                    </tr>";
+                                                                        <td>Female</td>
+                                                                    ";
+                                                                    }else {
+                                                                    echo "<td>Male</td>";
+                                                                    }
+                                                                    echo "
+                                                                    <td>".$row['DOB']."</td>
+                                                                    <td>". $location['big_area_name']."</td>
+                                                                    <td>". $location['small_area_name']."</td>
+                                                                    <td>". $location['record_name']."</td>
+                                                                    <td>".$row['REGISTERNUM']."</td>
+                                                                    <td>".$row['CENTERID']."</td>
+                                                                    
+                                                                </tr>";
                                                                 }
+                                                                }
+                                                            } else {
+                                                                echo "0 results";
                                                             }
-                                                            
-                                                        } else {
-                                                            echo "0 results";
-                                                        }
-                                                    ?>
+
+                            ?>
+
                                                 </tbody>
                                             </table>
                                             <input type="submit" value="Add to List" class="btn btn-danger">

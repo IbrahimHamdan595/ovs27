@@ -72,7 +72,7 @@
                                 <div class="card shadow">
                                     <div class="card-body">
                                         <!-- Filter Form -->
-                                        <form method="GET" action="checkName.php" class="mb-4">
+                                        <form method="GET" action="selectCandidateNewList.php" class="mb-4">
                                             <small>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"

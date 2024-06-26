@@ -95,6 +95,11 @@
         padding-right: 50px;
     }
 }
+@media only screen and (min-width: 1024px) {
+    .res {
+        margin-left: -70px;
+    }
+}
 @media only screen and (min-width: 1280px) and (max-width: 1366px) {
     .header-top::after {
         width: 95%;
@@ -391,7 +396,7 @@
         border-radius: 0px 0px 0px 10px;
     }
     .navbar-area .nav-container .nav-right-content .btn-wrapper {
-        display: none;
+        display: block;
     }
     .header-area.header-sanatory {
         padding: 120px 0px 100px;
@@ -3223,6 +3228,9 @@
 @media only screen and (max-width: 450px) {
     .navbar-area.nav-style-01 {
         padding: 0px;
+    }
+    .header-area {
+        background-position: center;
     }
     .header-area.header-sanatory .header-inner .title {
         font-size: 42px;

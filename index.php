@@ -140,7 +140,7 @@
         <nav class="navbar navbar-area style-01 navbar-expand-lg nav-style-02">
             <div class="container nav-container">
                 <div class="responsive-mobile-menu">
-                    <div class="logo-wrapper" style="margin-left: -70px;">
+                    <div class="logo-wrapper res">
                         <a href="index.html" class="logo">
                             <img src="./assets/img/logo.png" width="800px" alt="" />
                         </a>

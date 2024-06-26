@@ -8,6 +8,7 @@ $query = "SELECT VOTENUMBER FROM BOX WHERE USERID = $userID";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result);
 
-echo $row['VOTENUMBER'];
-
+echo "
+    <div class='d-flex align-items-center px-2 ml-1 bg-light' id='candidatevotes' style='height: 50px;'>".$row['VOTENUMBER']."</div>
+";
 ?>

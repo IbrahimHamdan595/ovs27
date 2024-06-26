@@ -149,7 +149,6 @@
     </div> <!-- .wrapper -->
     <script>
     function loadXMLDoc1() {
-        console.log("load1")
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
